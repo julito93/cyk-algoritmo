@@ -1,0 +1,7 @@
+Productions:
+S->AB|BCCcabb
+A->BAC|abbb
+B->CAC|BbA
+C->AB|aC|c
+String:
+cabbbccccabb
