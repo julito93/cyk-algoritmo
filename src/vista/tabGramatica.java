@@ -87,6 +87,8 @@ public class tabGramatica extends JPanel implements ActionListener {
 				escritor.write(txtCadena.getText());
 				
 				escritor.close();
+				
+				principal.inicializarPanelCyk(txtCadena.getText().length());
 			} 
 			catch (IOException e1) 
 			{
