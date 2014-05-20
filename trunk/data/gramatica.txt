@@ -3,4 +3,4 @@ S->BA|AC
 A->CC|b
 B->AB|a
 C->BA|aString:
-aaba
+bbab
