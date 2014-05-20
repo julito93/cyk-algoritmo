@@ -39,21 +39,23 @@ public class tabCYK extends JPanel {
 
 	public void actualizar(String cadenaW) {
 
-		String cadena = "                     ";
+		
+		for (int i = 1; i < matriz.length; i++) {
+			JTextField mi= matriz[i][0];
+			mi.setText(""+cadenaW.charAt(i-1));
+			JTextField mj = matriz[0][i];
+			mj.setText("j="+i);
+		}
 		try
 		{
+			
 			BufferedReader in = new BufferedReader(new FileReader("./data/respuesta.txt"));
 			String linea = in.readLine();
-			
-			for (int i = 0; i < cadenaW.length(); i++) 
-			{
-				cadena += "j = " + (i+1) + "     ";
-			}
-			cadena += "\n";
+			String cadena = "";
 			int j=0;
 			while(!linea.equals("&"))
 			{
-				cadena = cadena+" "+ cadenaW.charAt(j) + "     i = " + (j+1) + "   ";
+				
 				String[] produccion = linea.split("%");
 				for(int i =0; i<produccion.length; i++)
 				{
@@ -61,10 +63,9 @@ public class tabCYK extends JPanel {
 					{
 						produccion[i] = produccion[i].replace("}{", ", ");
 					}
+					matriz[j+1][i+1].setText(produccion[i]);
 					
-					cadena = cadena + "   " + produccion[i] + "   ";
 				}
-				cadena = cadena + "\n";
 				linea = in.readLine();
 				j++;
 			}
