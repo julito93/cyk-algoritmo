@@ -1,0 +1,7 @@
+Productions:
+S->BA|AB
+A->CA|a
+B->BB|b
+C->BA|c
+String:
+bca
