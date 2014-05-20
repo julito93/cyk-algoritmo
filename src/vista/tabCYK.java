@@ -1,11 +1,13 @@
 package vista;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -14,7 +16,7 @@ public class tabCYK extends JPanel {
 
 	private JTextField txtRespuesta;
 	private JTextArea txtAreaRespuesta;
-	private JTextField[][] matriz;
+	private JLabel[][] matriz;
 
 	/**
 	 * Create the panel.
@@ -41,17 +43,14 @@ public class tabCYK extends JPanel {
 
 		
 		for (int i = 1; i < matriz.length; i++) {
-			JTextField mi= matriz[i][0];
+			JLabel mi= matriz[i][0];
 			mi.setText(""+cadenaW.charAt(i-1));
-			mi.setEditable(false);
 			
 			mi= matriz[i][1];
 			mi.setText("i="+i);
-			mi.setEditable(false);
 			
 			mi = matriz[0][i+1];
 			mi.setText("j="+i);
-			mi.setEditable(false);
 		}
 		try
 		{
@@ -71,7 +70,6 @@ public class tabCYK extends JPanel {
 						produccion[i] = produccion[i].replace("}{", ", ");
 					}
 					matriz[j+1][i+2].setText(produccion[i]);
-					matriz[j+1][i+2].setEditable(false);
 					
 				}
 				linea = in.readLine();
@@ -110,13 +108,12 @@ public class tabCYK extends JPanel {
 		int f = t+1;
 		int c = t+2;
 		panel.setLayout( new GridLayout( f,c ) );
-		matriz = new JTextField[f][c];
+		matriz = new JLabel[f][c];
 		for ( int i = 0; i < f; i++ )
 		{
 			for ( int j = 0; j < c; j++ )
 			{
-				matriz[i][j] = new JTextField();
-				matriz[i][j].setEditable(false);
+				matriz[i][j] = new JLabel();
 				panel.add(matriz[i][j]);
 			}
 		}
