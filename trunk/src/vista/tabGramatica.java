@@ -45,7 +45,7 @@ public class tabGramatica extends JPanel implements ActionListener {
 		add(lblG);
 		
 		JLabel labelIcon = new JLabel("");
-		labelIcon.setIcon(new ImageIcon("C:\\Users\\Lorena\\workspace\\CYK\\data\\pic.jpg"));
+		labelIcon.setIcon(new ImageIcon("./data/pic.jpg"));
 		labelIcon.setBounds(65, 11, 71, 325);
 		add(labelIcon);
 		
