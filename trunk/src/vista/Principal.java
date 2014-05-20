@@ -80,16 +80,13 @@ public class Principal extends JFrame {
 		return mundo;
 	}
 
-	public tabCYK gettabCYK() {
-			return tabCYK;	
-	}
-
 	public tabCYK getTabCYK() {
 		return tabCYK;
 	}
 
-	public void setTabCYK(tabCYK tabCYK) {
-		this.tabCYK = tabCYK;
+	public void inicializarPanelCyk( int length )
+	{
+		tabCYK.inicializar( length );
 	}
 	
 	

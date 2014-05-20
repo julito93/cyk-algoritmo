@@ -1,5 +1,6 @@
 package vista;
 
+import java.awt.GridLayout;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class tabCYK extends JPanel {
 
 	private JTextField txtRespuesta;
 	private JTextArea txtAreaRespuesta;
+	private JTextField[][] matriz;
 
 	/**
 	 * Create the panel.
@@ -83,4 +85,33 @@ public class tabCYK extends JPanel {
 		}
 	}
 
+	public void inicializar( int t )
+	{
+		removeAll( );
+		
+		setLayout(null);
+		txtRespuesta = new JTextField();
+		txtRespuesta.setEditable(false);
+		txtRespuesta.setBounds(25, 34, 550, 20);
+		add(txtRespuesta);
+		txtRespuesta.setColumns(10);
+		
+		
+		JPanel panel = new JPanel();
+		int f = t+1;
+		int c = t+2;
+		panel.setLayout( new GridLayout( f,c ) );
+		matriz = new JTextField[f][c];
+		for ( int i = 0; i < f; i++ )
+		{
+			for ( int j = 0; j < c; j++ )
+			{
+				matriz[i][j] = new JTextField();
+				panel.add(matriz[i][j]);
+			}
+		}
+
+		panel.setBounds(25, 70, 550, 255);
+		add(panel);
+	}
 }
