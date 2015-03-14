@@ -1,0 +1,1 @@
+Algoritmo que reconoce si una cadena pertenece a L(G)
